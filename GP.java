@@ -787,6 +787,9 @@ public class GP
 			location = 3400;
 			extLocation = extLocation + "\n" + "FORMAT 'TEXT' (delimiter '|' null 'null' escape '\\\\')";
 
+			// add error table
+			extLocation = extLocation + " LOG ERROR INTO err_table_" + targetSchema + "_" + targetTable + " SEGMENT REJECT LIMIT 50 PERCENT";
+
 			////////////////////////////////////////////
 			//Add createSQL with Java Command to exec.
 			////////////////////////////////////////////
